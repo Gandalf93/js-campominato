@@ -8,14 +8,16 @@ function randomComp(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
 
-  var arrayComp = [];
 //   16 numeri random computer
   for (i = 0; i < 16; i++){
     var numComp = randomComp(1, 100);
     console.log(numComp);
-    if ()
   }
  
+  var arrayComp = [];
+  arrayComp.push(numComp);
+  
+
 //   i numeri non possono essere duplicati
 
 
@@ -25,20 +27,23 @@ console.log(arrayUtente);
 
 var domanda = prompt('inserisci un numero tra 1 e 100');
 
-while(arrayUtente.length < 84){
-        var utente = numUtente(domanda, numComp)
-        if (domanda == numComp){
-            console.log('hai perso');
-        }
-}
-     
+
+var utente = numUtente(domanda, numComp);
+
+
+
 
 function numUtente(x, y) {
+   for(x = 0; x < 84; x++){
     if(x != y){
         return arrayUtente.push(x);
+        
+    }else{
+        console.log('hai perso');
     }
-}
+   } 
     
+}
     
 
 
