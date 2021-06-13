@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    background-color: gold;
+}
+.container{
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10%;
+    width: 50%;
+    height: 650px;
+    margin: auto;
+    background-image: url(../img/bomb.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+    
+    

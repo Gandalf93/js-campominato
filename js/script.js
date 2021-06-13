@@ -37,7 +37,7 @@ function randomComp(min, max) {
 var numeriUtente = [];
 
 
-for (var i = 0; i < 10; i++ ){
+for (var i = 0; i < 1; i++ ){
   var domanda = parseInt(prompt('inserisci un numero da 1 a 100'));
   var numeri = numeriUtente.includes(domanda);
   if (numeri === false && !arrayComp.includes(domanda)){
