@@ -3,6 +3,8 @@
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero. La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 // Al termine della partita il software deve comunicare il punteggio,  cioè il numero di volte che l’utente ha inserito un numero consentito.
 
+// BONUS: (da fare solo se funziona tutto il resto) all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali: con difficoltà 0 => tra 1 e 100 con difficoltà 1 => tra 1 e 80 con difficoltà 2 => tra 1 e 50
+
 // funzione numeri random
 function randomComp(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -14,7 +16,7 @@ function randomComp(min, max) {
   for (i = 0; i < 16; i++){
     var numComp = randomComp(1, 100);
     var inclusi = arrayComp.includes(numComp);
-    // arrayComp.push(numComp);
+    
      if  (inclusi === false){
        arrayComp.push(numComp)
      }else{
@@ -30,27 +32,34 @@ function randomComp(min, max) {
   
   console.log(arrayComp);
 
-     
- 
-  
-  
- 
   // chiedere all'utente di inserire il numero
 
-  var arrayUtente = [];
-   
-  var domanda = parseInt(prompt('inserisci un numero tra 1 e 100' + arrayUtente.length));
-  
+var numeriUtente = [];
 
-  while (domanda < 84){
-    var domanda = parseInt(prompt('inserisci un numero tra 1 e 100' + arrayUtente.length));
-     if(domanda != arrayComp[i]){
-      arrayUtente.push(domanda);
-    }else{
-      console.log('hai perso');
+
+for (var i = 0; i < 10; i++ ){
+  var domanda = parseInt(prompt('inserisci un numero da 1 a 100'));
+  var numeri = numeriUtente.includes(domanda);
+  if (numeri === false && !arrayComp.includes(domanda)){
+    numeriUtente.push(domanda);
+  }else if (numeri === true && !arrayComp.includes(domanda)){
+    while(numeri === true && !arrayComp.includes(domanda)){
+      alert('hai già usato questo numero');
+      var domanda = parseInt(prompt('inserisci un numero da 1 a 100'));
+      var numeri = numeriUtente.includes(domanda);
+      if(numeri === false && !arrayComp.includes(domanda)){
+        numeriUtente.push(domanda);
+      }
     }
+  }else{
+    alert('HAI PERSO');
+    break;
   }
-console.log(arrayUtente);
+
+}
+ 
+alert('Hai indovinato ' + numeriUtente.length + ' numeri: ' + numeriUtente );
+console.log(numeriUtente);
   
 
   
