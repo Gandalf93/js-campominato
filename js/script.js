@@ -35,9 +35,11 @@ function randomComp(min, max) {
   // chiedere all'utente di inserire il numero
 
 var numeriUtente = [];
+var gioca = document.getElementById(pulsante);
+document.addEventListener("click", game);
 
-
-for (var i = 0; i < 1; i++ ){
+function game(){
+for (var i = 0; i < 100 - 16; i++ ){
   var domanda = parseInt(prompt('inserisci un numero da 1 a 100'));
   var numeri = numeriUtente.includes(domanda);
   if (numeri === false && !arrayComp.includes(domanda)){
@@ -57,8 +59,10 @@ for (var i = 0; i < 1; i++ ){
   }
 
 }
- 
 alert('Hai indovinato ' + numeriUtente.length + ' numeri: ' + numeriUtente );
+}
+ 
+
 console.log(numeriUtente);
   
 

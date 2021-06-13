@@ -10,8 +10,9 @@ main{
 .container{
     color: white;
     display: flex;
-    align-items: center;
-    padding: 10%;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
     width: 50%;
     height: 650px;
     margin: auto;
@@ -21,4 +22,16 @@ main{
     background-repeat: no-repeat; 
 }
     
+.row{
+ text-align: center;
+ width: 50%;
+     
+}
+  button{
+      padding: 10px;
+      background-color: gold;
+      margin-top: 20px;
+      
+  }  
+      
     
